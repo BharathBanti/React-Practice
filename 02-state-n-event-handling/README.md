@@ -1,16 +1,94 @@
-# React + Vite
+# React Login/Signup with JSON Server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a **React-based authentication project** demonstrating a fully functional **Login and Signup system** with form validation, controlled and uncontrolled components, two-way binding, and JSON Server as a fake backend.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project is **fully front-end focused**, but simulates a backend API to handle user registration and login, making it very close to real-world applications.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Login Form**
+  - Controlled components for email and password
+  - Client-side validation
+  - Error handling for invalid credentials
+  - Loading state during API requests
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Signup Form**
+  - Controlled components for email, password, and confirm password
+  - Password match validation
+  - Email uniqueness check using JSON Server
+  - Error handling for signup failures
+  - Loading state during API requests
+
+- **Two-Way Binding**
+  - All controlled inputs reflect state changes dynamically
+
+- **Toggle Forms**
+  - Switch between login and signup forms easily
+
+- **Welcome Screen**
+  - Displays logged-in user’s name and email
+  - Clean, responsive UI
+
+- **JSON Server Backend**
+  - Fake REST API to simulate user registration and authentication
+  - Supports GET and POST requests
+  - No real database needed
+
+- **Loading Component**
+  - Reusable spinner for async actions
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd <your-repo-folder>
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Install and start JSON Server
+```bash
+npm install -g json-server
+json-server --watch db.json --port 3001
+```
+
+Make sure usersData.json is in the root folder with the following structure:
+```bash
+{
+  "users": []
+}
+```
+
+### 4. Start the React app
+```bash
+npm start
+```
+---
+
+## Future Improvements
+- Add password strength validation
+- Add proper email format validation
+- Use localStorage or cookies for persistent login
+- Hash passwords before saving (for security)
+- Replace JSON Server with a real backend (Node.js + Express + MongoDB)
+
+---
+
+## Author
+
+Banti – Frontend Developer
+
+## License
+
+This project is open source and free to use for learning purposes.
