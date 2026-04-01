@@ -1,0 +1,34 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Sr. React Developer",
+      "salary": 90000,
+      "location": "Hyderbad"
+    },
+    {
+      "id": 2,
+      "title": "Java Developer",
+      "salary": 120000,
+      "location": "Pune"
+    },
+    {
+      "id": 3,
+      "title": "MERN Stack Developer",
+      "salary": 80000,
+      "location": "Bangalore"
+    },
+    {
+      "id": 4,
+      "title": "Data Analyst",
+      "salary": 65000,
+      "location": "Chennai"
+    },
+    {
+      "id": 5,
+      "title": "Software Engineer",
+      "salary": 140000,
+      "location": "Delhi"
+    }
+  ]
+}
