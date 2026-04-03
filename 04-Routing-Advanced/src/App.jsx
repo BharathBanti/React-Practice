@@ -1,17 +1,21 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from 'react-router-dom';
 import './App.css';
 import AppLayout from './Layouts/AppLayout';
-import Home from './pages/Home'
+import Home from './pages/Home';
 import About from './pages/About';
 import Product from './pages/Product';
 import Contact from './pages/Contact';
-import Employees from './pages/Employees';
-import Settings from './pages/Settings'
+import Settings from './pages/Settings';
 import Error from './components/Error';
 
-import ShiftA from './pages/ShiftA';
-import ShiftB from './pages/ShiftB';
+import Shift from './pages/Shift';
 import EmployeesLayout from './Layouts/EmployeesLayout';
+import EmployeeDetailsCard from './components/EmployeeDetailsCard';
+import { employeesLoader, employeesDetailsLoader } from './services/loaders';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,15 +25,15 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Home />
+          element: <Home />,
         },
         {
           path: '/about',
-          element: <About />
+          element: <About />,
         },
         {
           path: '/product',
-          element: <Product />
+          element: <Product />,
         },
         {
           path: '/contact',
@@ -38,26 +42,38 @@ function App() {
         {
           path: '/employees',
           element: <EmployeesLayout />,
+          loader: employeesLoader,
           children: [
             {
-              path: 'shiftA',
-              element: <ShiftA />
+              index: true,
+              element: <Navigate to="shift-A" replace />,
             },
             {
-              path: 'shiftB',
-              element: <ShiftB />
-            }
-          ]
+              path: ':shift',
+              element: <Shift />,
+              children: [
+                {
+                  path: ':id',
+                  element: <EmployeeDetailsCard />,
+                  loader: employeesDetailsLoader,
+                },
+              ],
+            },
+            {
+              path: '*',
+              element: <Error />,
+            },
+          ],
         },
         {
           path: '/settings',
-          element: <Settings />
+          element: <Settings />,
         },
-      ]
-    }
-  ])
-  
-  return <RouterProvider router={router} />
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

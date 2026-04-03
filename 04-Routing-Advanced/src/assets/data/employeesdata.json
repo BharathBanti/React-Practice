@@ -284,21 +284,6 @@
       "department": "IT",
       "status": "inactive",
       "avatar": "https://i.pravatar.cc/150?img=19"
-    },
-    {
-      "id": 20,
-      "name": "Shreya Gupta",
-      "role": "employee",
-      "salary": 77000,
-      "phone": "9012340001",
-      "position": "Security Engineer",
-      "email": "shreya.gupta@example.com",
-      "password": "Shreya@505",
-      "shift": "B",
-      "location": "Jaipur",
-      "department": "IT",
-      "status": "active",
-      "avatar": "https://i.pravatar.cc/150?img=20"
     }
   ]
 }
